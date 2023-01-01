@@ -1,0 +1,23 @@
+{% extends 'template.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block client_info %}
+    {% if client_user %}
+        <h1>{{ client_user.name }}</h1>
+        <p> {{ client_user.surname }}</p>
+        <p> {{ client_user.email }}</p>
+        <p> {{ client_user.phone }}</p>
+    {% else %}
+        <p>Nie ma takiego Klienta</p>
+    {% endif %}
+
+{% endblock client_info %}
+</body>
+</html>
