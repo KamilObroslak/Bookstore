@@ -1,0 +1,1 @@
+Plik i projekt do nauki Pythona, Django i systemu kontroli wersji GitHub
