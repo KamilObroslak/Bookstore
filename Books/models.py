@@ -27,7 +27,7 @@ class Books(models.Model):
         verbose_name = "Ksiażka"
         verbose_name_plural = "Ksiażki"
 
-# ------------------------------------------------------------
+# ------------------Dodatkowe aplikacje---------------------------
 
 class Clients_info(models.Model):
     # def __str__(self):
