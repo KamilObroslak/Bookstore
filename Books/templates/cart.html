@@ -1,0 +1,83 @@
+{% extends 'template.html' %}
+{% load static %}
+
+	{% block cart %}  
+	<h1 style="text-align: center;">Koszyk</h1><br>
+	<hr>
+	<hr>
+	<div class="cart" style="text-align: center;">
+		
+		Produkt1, cena, ilosc(?), usuń 	<br>
+		Produkt2, cena, ilość(?), usuń	<br>
+		SUMA							<br>
+		Zamów							<br>
+		Zamówienie pod postacią pliku wysyłane na serwer/maila z załącznikiem <br>
+		Twój adres email: {{user.email}}<br>
+		Tu powinien kończyć się koszyk<br>
+		
+	</div>
+	
+	<br>
+	<hr>
+	<hr>
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="box-element">
+				<a class="btn btn-outline-dark" href="/books">&#x2190; Kupuj dalej</a>
+				<br>
+				<br>
+				<table class="table">
+						<tr>
+						<th><h5>Rzeczy w koszyku: <strong>3</strong></h5></th>
+						<th><h5>Razem: <strong>43$</strong></h5></th>
+						<th>
+							<a style="float:right; margin: 5px;" href="/books">Inne ksiazki</a>
+						</th>
+					</tr>
+				</table>
+			</div>
+			<br>
+			<div class="box-element">
+					<div class="cart-row">
+					<div style="flex:2"></div>
+					<div style="flex:2"><strong>Item</strong></div>
+					<div style="flex:1"><strong>Price</strong></div>
+					<div style="flex:1"><strong>Quantity</strong></div>
+					<div style="flex:1"><strong>Total</strong></div>
+				</div>
+			</div>
+		</div>
+		<div class="shipping-info">
+			<hr>
+			<hr>
+				<p>Adres dostawy:</p>
+			</hr>
+			<div class="form-field">
+				<input class="form-control" type="text" name="address"
+				placeholder="Adres...">
+			</div>
+			<div class="form-field">
+				<input class="form-control" type="text" name="city"
+				placeholder="Miasto...">
+			</div>
+			<div class="form-field">
+				<input class="form-control" type="text" name="state"
+				placeholder="Kraj...">
+			</div>
+			<div class="form-field">
+				<input class="form-control" type="text" name="post-code"
+				placeholder="Kod pocztowy">
+			</div>
+			<div class="form-field">
+				<input class="form-control" type="text" name="phone"
+				placeholder="telefon">
+			</div>
+			<div class="form-field">
+				<input class="form-control" type="text" name="email"
+				placeholder="email">
+			</div>
+			<br>
+			<button class="order_button">Zamawiam</button><br>
+		</div>
+	</div>
+	{% endblock cart %}

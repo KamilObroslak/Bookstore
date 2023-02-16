@@ -1,4 +1,6 @@
+from django import forms
 from django.shortcuts import redirect, render
+
 from .models import Books, Category
 # from django.contrib.auth.forms import UserCreationForm
 
@@ -10,6 +12,7 @@ from django.contrib.auth.decorators import login_required
 
 from .forms import CreateUserForm
 
+from django.contrib.auth.models import *
 
 def registerPage(request):
     if request.user.is_authenticated:
@@ -61,7 +64,7 @@ def index(request):
     data = {'kategorie': all_category}
 
     # 'nazwa pliku który ma być wyświetlany,
-    # słownik "dane" który łączy zmienne w HTML z objektami django'
+    # słownik "data" który łączy zmienne w HTML z objektami django'
     # pliki HTML muszą być umieszczone w folderze szablonów "templates"
     return render(request, 'template.html', data)
 
@@ -78,9 +81,37 @@ def kategoria(request, id):
 
 
 @login_required(login_url='login')
+def books(request):
+    book_user = Books.objects.all()
+    data = {'ksiazki': book_user}
+    return render(request, 'books.html', data)
+
+
+@login_required(login_url='login')
 def book(request, id):
     book_user = Books.objects.get(pk=id)
     all_category = Category.objects.all()
     data = {'book_user': book_user,
             'kategorie': all_category}
     return render(request, 'book.html', data)
+
+
+@login_required(login_url='login')
+def contactinfo(request):
+    return render(request, 'contact.html')
+
+
+@login_required(login_url='login')
+def cart(request):
+     if request.user.is_authenticated:
+        if request.method == 'POST':
+            email = request.POST.get('email')
+        return render(request, 'cart.html')
+
+    # context = {}
+    # return render(request, 'cart.html', context)
+
+    # if request.user.is_authenticated:
+    #         if request.method == 'POST':
+    #             email = request.POST.get('email')
+    #         return render(request, 'cart.html')

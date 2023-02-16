@@ -1,24 +1,16 @@
 {% extends 'template.html' %}
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    {% block book %}
+{% load static %}
+{% block book %}
+    <book class="book" style="text-align: center;">
         {% if book_user %}
-            <h1>{{ book_user.title }}</h1>
-            <p> {{ book_user.author }}</p>
-            <p> {{ book_user.category_name }}</p>
-            <p> {{ book_user.ISBN }}</p>
-            <p> {{ book_user.price }}</p>
+            <h3>Tytuł: {{ book_user.title }}</h3>
+            <h5>Autor: {{ book_user.author }}</h5>
+            <h5>Kategoria: {{ book_user.category }}</h5>
+            <h5>nr ISBN {{ book_user.ISBN }}</h5>
+            <h5>Cena: {{ book_user.price }}</h5>
+            <p><button>Dodaj do koszyka</button></p>
         {% else %}
             <p>Nie ma takiej książki</p>
         {% endif %}
-    {% endblock book %}
-</body>
-</html>
+    </book>
+{% endblock book %}

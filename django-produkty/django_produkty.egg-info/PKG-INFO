@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: django-produkty
+Version: 0.1
+Summary: A Django app to conduct web-based produkty.
+Home-page: https://www.example.com/
+Author: Kamil Obroślak
+Author-email: kamilobroslak1@gmail.com
+License: BSD-3-Clause  # Example license
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: X.Y  # Replace "X.Y" as appropriate
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Requires-Python: >=3.8
+
+{\rtf1}
+
+=====
+Produkty
+=====
+
+Description
+
+Quick start
+-----------
+
+1. Add "Produkty" to your INSTALLED_APPS setting like this::
+
+    INSTALLED_APPS = [
+        ...
+        'Produkty',
+    ]
+
+2. Include the Produkty URLconf in your project urls.py like this::
+
+    path('Produkty/', include('Produkty.urls')),
+
+3. Run ``python manage.py migrate`` to create the Produkty models.
+
+4. Start the development server and visit http://127.0.0.1:8000/admin/
+   to create a Produkt (you'll need the Admin app enabled).
+
+5. Visit http://127.0.0.1:8000/Produkty/ to participate in the Produkt.
+

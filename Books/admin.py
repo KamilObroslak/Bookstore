@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Books, Category
-from Produkty.models import *
-from Clients.models import *
+from Produkty.models import Producent, Produkty, Kategoria
+from Clients.models import Clients_info
 
 admin.site.register(Books)
 admin.site.register(Category)

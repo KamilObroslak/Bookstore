@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -27,11 +28,28 @@ class Books(models.Model):
         verbose_name = "Ksiażka"
         verbose_name_plural = "Ksiażki"
 
+# class Cart(models.Model):
+#     def __str__(self):
+#         return self.price_total
+    
+#     email_user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+#     id_book = models.CharField(max_length=100)
+#     quantity = models.CharField(max_length=10)
+#     price_total = models.DecimalField(max_digits=12, decimal_places=2)
+
+#     def buyer():
+#         buyer_email = ???
+    
+#     class Meta:
+#         verbose_name = "Koszyk"
+#         verbose_name_plural = "Koszyki"
+        
+
 # ------------------Dodatkowe aplikacje---------------------------
 
 class Clients_info(models.Model):
-    # def __str__(self):
-    #     return self.client_name
+    def __str__(self):
+        return self.client_name
 
     client_name = models.CharField(max_length=60)
     client_surname = models.CharField(max_length=60)
@@ -39,8 +57,8 @@ class Clients_info(models.Model):
     client_phone = models.CharField(max_length=16)
 
     class Meta:
-        verbose_name = "Klient"
-        verbose_name_plural = "Klienci"
+        verbose_name = "klient"
+        verbose_name_plural = "klienci"
 
 
 class Producent(models.Model):

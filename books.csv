@@ -1,0 +1,12 @@
+id,title,author,ISBN,price,category_id
+1,Pan Tadeusz,Adam Mickiewicz,1234-5678-8901-XYZA,29.99,2
+2,Psychologia Tlumu,Gustave Le Bon,98765312312342,24.99,2
+3,Python - Wprowadzenie,Mark Lutz,3123-4124-2334-2129,130,1
+4,Programowanie strukturalne i obiektowe,Jan Kowalski,2331-4325-32-5435-12,110,1
+5,Relacyjne Bazy Danych,Adam Nowak,8324-5432-124-53-334,60,1
+6,Ksiaze,Niccolo Machiavelli,3123-9623-34-2133-,19.99,2
+7,Sieci komputerowe,Kamil Zielinski,23-1231-5745-12-2324,49.99,1
+8,Ksiazka bez kategorii,Nieznany,0000-0000-0000-0000,-50,
+9,"Big data, nauka o danych i AI bez tajemnic. Podejmuj lepsze decyzje i rozwijaj swój biznes!",David Stephenson,654-2345-54-2335,55,1
+10,Data science od podstaw. Analiza danych w Pythonie,Grus Joel,54436954,58.98,1
+11,Wiedzmin - Zbiór opowiadan,Andrzej Sapkowski,213-5325-12312-56,24.99,2

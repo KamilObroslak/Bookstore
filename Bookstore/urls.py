@@ -14,9 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from Books.views import *
-from Produkty.views import *
+# from Produkty.views import *
+from Clients.views import clients
+from django.conf.urls.static import static
+from django.conf import settings
 
 
 urlpatterns = [
@@ -29,6 +32,13 @@ urlpatterns = [
     path('', index, name='index'),
     # sciezka do kategoria/id, nazwa naszej funkcji ktora stwarzam w views.py,
     path('kategoria/<id>/', kategoria, name='kategoria'),
-    path('ksiazka/<id>/', book, name='ksiazka'),
-    path('produkty/<id>', produkt, name='produkt')
+    path('ksiazka/<id>/', books, name='ksiazka'),
+    path('books/', books, name='ksiazki'),
+    path('book/<id>', book, name='ksiazka'),
+    path('contact/', contactinfo, name='kontakt'),
+    path('cart/', cart, name='koszyk'),
+    #p ath('products/', produkt, name='produkty'),
+    # path('produkty/<id>', produkt, name='produkt')
+    path('client_list/<id>', clients, name='klient'),
+    # path('Clients/', include('Clients.urls'), name='klient'),
 ]

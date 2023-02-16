@@ -1,48 +1,67 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
-    <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-    crossorigin="anonymous">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, intial-scale=1.0, maximum-scale=1, minimum-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<title>Księgarnia</title>
+
+	<!-- <link rel="stylesheet" href="style.css" /> -->
+	<link href="{% static 'Books/css/fontello.css' %}" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="{% static 'Books/style.css' %}">
 </head>
+
 <body>
-    <div>
-        {% include 'navbar.html' %}
-        <h1> Logo</h1>
-        <a href = '/register/'>Zarejestruj się </a>
-        <br>
-        <br>
-        <a href = '/login/'> Zaloguj się </a>
-        <br>
-        <br>
-    </div>
-    <div style="clear:both"></div>
+	<header>
+		<h1 class="header-title">
+			<a href="/"><span style="color: wheat; font-size:40px">&nbsp &nbsp Księgarnia </span></a>
+			<span id="hello-msg">&nbsp &nbsp Cześć, {{request.user}}</span>
+		</h1>
+		<div class="search-bar">
+			<input type="text" class="search-bar-input" placeholder="Szukaj.." />
 
-    <div style="width: 200px; float:left">
-        <h2> Wybierz kategorię </h2>
-        {% for kat in kategorie %}
-            <p><a href = "/kategoria/{{ kat.id }}">{{ kat.category_name }} </a> </p>
-        {% endfor %}
-    </div>
+			
+			<a href="#"> <span class="icon-search" style="color:rgb(100, 98, 98)"></a>
+			</span>
+		</div>
+			<a href="/cart">
+				<div style="font-size: 25px; color: rgb(82, 72, 72)" class="icon-basket">Koszyk</div>
+			</a>
+			<a href="{% url 'logout' %}"><span style="font-size: 25px; color: rgb(252, 60, 60)">&nbsp Wyloguj</span></a>
+	</header>
 
-    <div style="width: 700px; float:left">
-        {% block book %}   {% endblock book %}
-    </div>
-    <a href = '/Bookstore/Clients/templates/client_list.html'>Lista Klientów/Produktów</a>
+	<div class="container">
+		<aside class="categories">
+			<h1 class="categories-title">Strona jeszcze w budowie ;-)</h1>
 
-    <div style="clear:both"></div>
+			<section class="categories-items">
+				<a href="/"><button class="active">Strona główna</button></a>
+					<a href="/books"> <button>Książki</button></a>
+					<!-- <a href="/products"> <button>Dodatki</button></a> -->
+					<a href="/contact"><button>Kontakt</button></a>
+			</section>
+		</aside>
+	</div>
+	{% block book %}   {% endblock book %}
+	{% block contact %}   {% endblock contact %}
+	{% block cart %}   {% endblock cart %}
+	</div>
+
+	<div class="mainphoto" style="text-align: center;">
+		<img src="{% static 'Books/Grafika/photo1.jpg' %}" alt="Main Photo"/>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity=
+	"sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity=
+	"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity=
+	"sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 </body>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-crossorigin="anonymous"></script>
-
 </html>

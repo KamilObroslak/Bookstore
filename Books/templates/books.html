@@ -1,0 +1,15 @@
+{% extends 'template.html' %}
+{% load static %}
+{% block book %}
+<div class="row">
+	{% for bok in ksiazki %}
+		<div class="col-lg-4">
+			<a href = "/book/{{bok.id}}">
+				<div class="box-element-product">
+					<h2>{{bok.title}} <br> cena: {{bok.price}}</h2>
+				</div>
+			</a>
+		</div>
+	{% endfor %}
+</div>
+{% endblock book %}
