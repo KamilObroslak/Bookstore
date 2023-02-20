@@ -4,11 +4,15 @@
 <div class="row">
 	{% for bok in ksiazki %}
 		<div class="col-lg-4">
-			<a href = "/book/{{bok.id}}">
-				<div class="box-element-product">
-					<h2>{{bok.title}} <br> cena: {{bok.price}}</h2>
-				</div>
-			</a>
+			<img class="photo" src="{{bok.image.url}}">
+			<div class="box-element-product"></div>
+				<a href = "/book/{{bok.id}}">
+					<h6><strong>{{bok.title}}</strong></h6>
+						<hr>
+					<button class="btn btn-outline-secondary add-btn">Więcej</button>
+				</a>
+				<button class="btn btn-outline-secondary add-btn">Dodaj do koszyka</button>
+				<h4 style="display: inline-block; float:right;">{{bok.price}}PLN</h4>
 		</div>
 	{% endfor %}
 </div>

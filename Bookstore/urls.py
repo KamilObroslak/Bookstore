@@ -18,6 +18,7 @@ from django.urls import path, include
 from Books.views import *
 # from Produkty.views import *
 from Clients.views import clients
+
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -42,3 +43,5 @@ urlpatterns = [
     path('client_list/<id>', clients, name='klient'),
     # path('Clients/', include('Clients.urls'), name='klient'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

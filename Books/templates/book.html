@@ -1,16 +1,20 @@
 {% extends 'template.html' %}
 {% load static %}
 {% block book %}
-    <book class="book" style="text-align: center;">
-        {% if book_user %}
-            <h3>Tytuł: {{ book_user.title }}</h3>
-            <h5>Autor: {{ book_user.author }}</h5>
-            <h5>Kategoria: {{ book_user.category }}</h5>
-            <h5>nr ISBN {{ book_user.ISBN }}</h5>
-            <h5>Cena: {{ book_user.price }}</h5>
-            <p><button>Dodaj do koszyka</button></p>
-        {% else %}
-            <p>Nie ma takiej książki</p>
-        {% endif %}
-    </book>
+
+{% if book_user %}
+    <div class="col-lg-6">
+        <h3><strong>Tytuł:</strong> {{ book_user.title }}</h3>
+        <h5><strong>Autor:</strong> {{ book_user.author }}</h5>
+        <h5><strong>Kategoria:</strong> {{ book_user.category }}</h5>
+        <h5><strong>nr ISBN</strong> {{ book_user.ISBN }}</h5>
+        <h5><strong>Cena:</strong> {{ book_user.price }}</h5>
+        <p><button class="btn btn-outline-secondary add-btn">Dodaj do koszyka</button></p>
+    </div>
+    <div>
+        <img class="photo" src="{{book_user.image.url}}">
+    </div> 
+    {% else %}
+        <p>Nie ma takiej książki</p>
+    {% endif %}
 {% endblock book %}

@@ -1,7 +1,7 @@
 from django import forms
 from django.shortcuts import redirect, render
 
-from .models import Books, Category
+from .models import *
 # from django.contrib.auth.forms import UserCreationForm
 
 from django.contrib.auth import authenticate, login, logout

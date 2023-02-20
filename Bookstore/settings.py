@@ -122,9 +122,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFIELDS_DIRS = [os.path.join(BASE_DIR, "static"),
+STATICFIELDS_DIRS = [os.path.join(BASE_DIR, "static")
     #'/var/www/static/',
 ]
+
+MEDIA_URL = '/Books/Grafika/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'Books/static/Books/Grafika')
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
 
@@ -132,5 +136,3 @@ STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-

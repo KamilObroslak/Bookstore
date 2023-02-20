@@ -28,6 +28,8 @@ header
 .book
 {
 	font-size: 50px;
+	width: 500px;
+	text-align: left;
 }
 
 .icon-search
@@ -99,8 +101,22 @@ h1,h2,h3,h4,h5,h6{
 	padding: 10px;
 }
 
-.box-element-product{
+.col-lg-4
+{
+	width: 300px;
+	text-align: center;
 	min-height: 300px;
+}
+
+.photo
+{
+	width: 200px;
+	height: 300px;
+	text-align: center;
+}
+
+.box-element-product{
+	min-height: 1px;
 	background-color: darkgray;
 }
 
