@@ -110,9 +110,19 @@ h1,h2,h3,h4,h5,h6{
 
 .photo
 {
-	width: 200px;
-	height: 300px;
+	max-width: 200px;
+	max-height: 300px;
 	text-align: center;
+}
+
+.row-image{
+	width: 100px;
+}
+
+.quantity{
+	display: inline-block;
+	font-weight: 700;
+	padding-right: 10px;
 }
 
 .box-element-product{
@@ -130,6 +140,12 @@ h1,h2,h3,h4,h5,h6{
 
 .product{
 	border-radius: 0 0 4px 4px;
+}
+
+.form-field{
+	width: 250px;
+	display: inline-block;
+	padding: 5px;
 }
 
 .bg-dark{

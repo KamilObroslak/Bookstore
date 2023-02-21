@@ -3,17 +3,19 @@
 {% block book %}
 
 {% if book_user %}
-    <div class="col-lg-6">
+<div style="display: flex; flex-wrap: wrap;">
+    <div>
+        <img class="photo" style="width: 200px; height: 300px;" src="{{book_user.image.url}}">
+    </div>
+    <div class="col-lg-8" style="float: left;">
         <h3><strong>Tytuł:</strong> {{ book_user.title }}</h3>
         <h5><strong>Autor:</strong> {{ book_user.author }}</h5>
         <h5><strong>Kategoria:</strong> {{ book_user.category }}</h5>
         <h5><strong>nr ISBN</strong> {{ book_user.ISBN }}</h5>
         <h5><strong>Cena:</strong> {{ book_user.price }}</h5>
-        <p><button class="btn btn-outline-secondary add-btn">Dodaj do koszyka</button></p>
+        <p style="position: relative; top: auto;"><button class="btn btn-outline-secondary add-btn">Dodaj do koszyka</button></p>
     </div>
-    <div>
-        <img class="photo" src="{{book_user.image.url}}">
-    </div> 
+</div>
     {% else %}
         <p>Nie ma takiej książki</p>
     {% endif %}

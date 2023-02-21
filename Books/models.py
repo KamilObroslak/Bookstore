@@ -29,6 +29,14 @@ class Books(models.Model):
         verbose_name = "Ksiażka"
         verbose_name_plural = "Ksiażki"
 
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
+
 
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)

@@ -107,6 +107,10 @@ def cart(request):
         if request.method == 'POST':
             email = request.POST.get('email')
         return render(request, 'cart.html')
+     
+@login_required(login_url='login')
+def checkout(request):
+    return render(request, 'checkout.html')
 
     # context = {}
     # return render(request, 'cart.html', context)

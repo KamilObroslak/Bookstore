@@ -28,7 +28,7 @@
 			</span>
 		</div>
 			<a href="/cart">
-				<div style="font-size: 25px; color: rgb(82, 72, 72)" class="icon-basket">Koszyk</div>
+				<div style="font-size: 25px; color: rgb(82, 72, 72)" class="icon-basket"><button>Koszyk</button></div>
 			</a>
 			<a href="{% url 'logout' %}"><span style="font-size: 25px; color: rgb(252, 60, 60)">&nbsp Wyloguj</span></a>
 	</header>
@@ -44,9 +44,10 @@
 					<a href="/contact"><button>Kontakt</button></a>
 			</section>
 		</aside>
-	{% block book %}   {% endblock book %}
-	{% block contact %}   {% endblock contact %}
-	{% block cart %}   {% endblock cart %}
+	{% block book %}       {% endblock book %}
+	{% block contact %}    {% endblock contact %}
+	{% block cart %}       {% endblock cart %}
+	{% block checkout %}   {% endblock checkout %}
 	</div>
 
 	<div class="mainphoto" style="text-align: center;">

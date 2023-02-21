@@ -1,18 +1,23 @@
 {% extends 'template.html' %}
 {% block contact %}
 	<h1 style="text-align: center;">Kontakt</h1>
-		<div class="map" style="margin-left:10%;">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39911.8393852111!2d22.850226841531825!3d51.302109491243854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4723b2a5992de9a1%3A0x645f82346c2ac3ea!2zxYHEmWN6bmE!5e0!3m2!1spl!2spl!4v1675803195132!5m2!1spl!2spl"
-			width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-			<div class="info" style="float: right; margin-right: 30%;"></div>
-			<br>
-			<br>
-			<br>
-			Moja Księgarnia				<br>
-			Miasto: Łęczna				<br>
-			Adres: Adresowa 1			<br>
-			telefon: 123123123			<br>
-			mail: kontakt@ksiazka.pl	<br>
 
+	<div style="display: flex; flex-wrap: wrap;">
+
+		<div class="col-lg-6" style="float: left;">
+			<h1><strong>Moja Księgarnia</strong></h1>			<br>
+			<h3><strong>Miasto:</strong> Łęczna</h3>			<br>
+			<h3><strong>Adres:</strong> Adresowa</h3>			<br>
+			<h3><strong>telefon:</strong> 123123123</h3>		<br>
+			<h2><strong>email:</strong> kontakt@ksiazka.pl</h2>	<br>
 		</div>
+
+		<div class="col-lg-6">
+			<div class="map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39911.8393852111!2d22.850226841531825!3d51.302109491243854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4723b2a5992de9a1%3A0x645f82346c2ac3ea!2zxYHEmWN6bmE!5e0!3m2!1spl!2spl!4v1675803195132!5m2!1spl!2spl"
+				width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+				<div class="info" style="float: right; margin-right: 30%;"></div>
+			</div>
+		</div>
+	</div>
 {% endblock contact %}

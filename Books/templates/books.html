@@ -4,7 +4,7 @@
 <div class="row">
 	{% for bok in ksiazki %}
 		<div class="col-lg-4">
-			<img class="photo" src="{{bok.image.url}}">
+			<img class="photo" src="{{bok.imageURL}}">
 			<div class="box-element-product"></div>
 				<a href = "/book/{{bok.id}}">
 					<h6><strong>{{bok.title}}</strong></h6>
