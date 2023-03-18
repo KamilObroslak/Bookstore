@@ -1,18 +1,20 @@
 from django import forms
 from django.shortcuts import redirect, render
-
 from .models import *
+from rest_framework import viewsets
+from .serializer import BooksSerializer
 # from django.contrib.auth.forms import UserCreationForm
-
 from django.contrib.auth import authenticate, login, logout
-
 from django.contrib import messages
-
 from django.contrib.auth.decorators import login_required
-
 from .forms import CreateUserForm
-
 from django.contrib.auth.models import *
+
+
+class BookViewSet(viewsets.ModelViewSet):
+    queryset = Books.objects.all()
+    serializer_class = BooksSerializer
+
 
 def registerPage(request):
     if request.user.is_authenticated:

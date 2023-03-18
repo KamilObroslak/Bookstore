@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'Books',
     'Clients',
     'Produkty',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
